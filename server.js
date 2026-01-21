@@ -9,6 +9,12 @@ const routes = require("./routes/index.js");
 const dotenv = require("dotenv");
 const MongoStore = require("connect-mongo").default;
 dotenv.config();
+const authController = require('./controllers/auth.js');
+const foodsController = require('./controllers/foods.js');
+const isSignedIn = require('./middleware/is-signed-in.js');
+
+
+
 
 const app = express();
 const PORT = process.env.PORT ? process.env.PORT : 3000;
@@ -38,7 +44,7 @@ db.on("connected", () => {
   console.clear();
   console.log("You are connected to MongoDB!");
 
-  app.listen(PORT, () => {
+  app.listen(3000, () => {
     console.log("Your server is running!");
   });
 });

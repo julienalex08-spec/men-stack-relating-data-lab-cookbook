@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Food</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+  </head>
+  <body>
+    <%- include('../partials/nav.ejs') %>
+
+    <h1>Edit <%= pantryItem.name %></h1>
+    <form action="/foods/<%= pantryItem._id %>?_method=PUT" method="POST">
+      <label for="name">Item:</label>
+      <input type="text" name="name" id="name" value="<%= pantryItem.name %>" />
+      <button type="submit">Update Food</button>
+    </form>
+
+    <!-- [TBU] Fill out edit form with pre-populated values -->
+  </body>
+</html>
